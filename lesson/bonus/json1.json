@@ -1,0 +1,12 @@
+{
+    "Q1": {
+        "question": "What are dolphins?",
+        "choice": ["1-Amphibians", "2-Fish", "3-Mammals", "4-Birds"],
+        "answer": "3"
+    },
+    "Q2":{
+        "question": "What occupies most of the Earth's surface?",
+        "choice": ["1-Land", "2-Water"],
+        "answer": "2"
+    }
+}

@@ -1,0 +1,136 @@
+/* PDF対応＆デザイン強化：履歴書用CSS */
+
+body {
+    font-family: "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+    margin: 40px;
+    background-color: #ffffff;
+    color: #2c3e50;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.resume {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #fdfdfd;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #34495e;
+}
+
+header p {
+    text-align: left;
+    margin: 4px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+section {
+    margin-bottom: 40px;
+    page-break-inside: avoid;
+}
+
+h2 {
+  font-size: 22px;
+  border-left: 6px solid #3498db;
+  padding-left: 10px;
+  margin-top: 50px;
+  color: #2c3e50;
+  background-color: #ecf6fc;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 4px;
+  page-break-before: auto;  /* ← これが重要！ */
+  page-break-after: avoid;
+}
+
+h3 {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #1a5276;
+}
+
+h4 {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #2980b9;
+}
+
+p {
+    margin: 6px 0;
+    color: #333;
+}
+
+ul {
+    margin: 6px 0 16px 20px;
+    padding-left: 0;
+    color: #444;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+.job {
+    padding: 20px;
+    margin-bottom: 30px;
+    border-left: 5px solid #7fb3d5;
+    background-color: #f9fcff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    page-break-inside: avoid;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.skills li {
+    background-color: #3498db;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+@media print {
+    body {
+        margin: 0;
+    }
+
+    .resume {
+        max-width: none;
+        margin: 0;
+        padding: 20px;  /* 0は避けて適度に余白を残す */
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    header, section, .job {
+        /* 大きいブロックに avoid を付けるとPDFでレイアウト崩れやすいので解除 */
+        page-break-inside: auto;
+    }
+
+    h2, h3, h4 {
+        page-break-after: avoid;
+    }
+}
